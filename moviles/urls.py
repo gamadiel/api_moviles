@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include 
+fron django.config.urls.static import statistics
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/',include('fragment.urls'))
-]
+] + static(setting.STATIC_URL, document_root =setting.STATIC_ROOT)
